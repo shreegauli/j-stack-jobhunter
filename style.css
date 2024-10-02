@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+/* globle css */
+h1{
+    font-size: 3rem;
+    font-size: 600;
+}
+h2{
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 3.75rem;
+}
+h3{
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    font-weight: 500;
+}
+#obj-width{
+    max-width: 100%;
+    margin: auto;
+}
+.sec-space{
+    padding: 4rem 0;
+}
+.extra-space{
+    padding-top: 8rem;
+}
+
+
+header{
+    background-color: #1f4a40;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+   padding-left: 0.625rem;
+   padding-right: 0.625rem;
+}
+.menu li a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+
+}
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo{
+    margin-left: 1.25rem;
+}
+.w-btn{
+margin-left: 2.5rem;
+background-color: #fff;
+padding: 0.5625rem 1.25rem;
+color: #1f4a40;
+border-radius: 1.25rem;
+font-size: 1.2rem;
+font-weight: 500;
+box-shadow: none;
+border: none;
+}
+#w-btn{
+    margin-left: 2.5rem;
+    background-color: #fff;
+    padding: 0.5625rem 1.25rem;
+    color: #1f4a40;
+    border-radius: 1.25rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow: none;
+    border: none;
+    }
+    .g-btn{
+        text-decoration: none;
+        background-color: #51a995;
+        color: #fff;
+        padding: 0.5625rem 1.875rem;
+        border-radius: 1.25rem;
+        cursor: pointer;
+    }
+#bar{
+color: #fff;
+display: none;
+}
+.hero{
+    background-color: #1f4a40;
+    padding: 9.375rem;
+}
+.hero-box{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+.h-right{
+    width: 50%;
+}
+.h-right img{
+    width: 100%;
+    object-fit: cover;
+}
+.h-left{
+    width: 45%;
+    color: #fff;
+}
+.h-left p{
+    padding: 1.5rem, 0;
+}
+.serch{
+    position: relative;
+
+}
+.serch input{
+    width: 100%;
+    height: 4rem;
+    border-radius: 2.1875rem;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+.serch a{
+position: absolute;
+top: 0.75rem;
+right: 1.25rem;
+
+}
+@media (max-width: 699px) {
+
+    #bar{
+display: block;
+font-size: 1.7rem;
+cursor: pointer;
+
+    }
+    .navbar{
+        padding: 0.5rem;
+    }
+    .menu{
+        list-style: none;
+        display: block;
+        width: 17.5rem;
+        height: auto;
+        position: absolute; 
+        top: 5rem;
+        right: -100%;
+        padding: 1.875rem 0;
+        box-shadow: 0rem 0.125rem 0.625rem rgba(0,0,0,0.2);
+        border-radius: 0.8125rem;
+        opacity: 0;
+        transition: all 0.3s;
+
+    }
+
+    .menu.active{
+       right: 0.625rem;
+       opacity: 1;
+       background-color:burlywood   ;
+       background-clip:inherit;
+    }
+    
+
+    .menu li a{
+        color: #fff;
+      
+    }
+    .menu li{
+        padding: 1rem;
+      
+    }
+    .w-btn{
+        margin: 1.25rem 0 0 3.125rem;
+        background-color: #1f4a40;
+        padding: 0.5625rem 0.75rem;
+        color: #fff;
+        border-radius: 1.25rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        }
+
+      
+        .h-left{
+            width: 100%;
+
+        }
+        .h-right{
+            display: none;
+        }
+        .serch input {
+           margin-top: 1rem;
+        }
+        .serch a {
+        
+            top: 1.75rem;
+           
+        }
+        .hero-box {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: start;
+            height: auto;
+            padding: 8rem 0;
+          
+        }
+        .hero {
+      
+            padding: 0;
+        }
+
+}
