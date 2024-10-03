@@ -1,0 +1,152 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right,#4e9797, #6a11cb, #2575fc, #e86464); /* Gradient background */
+}
+
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-container {
+    margin-top: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.auth-container p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 90%; 
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.form-group input:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+.auth-btn {
+    background-color: #6a11cb; 
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: #2575fc;
+}
+
+.toggle-link {
+    margin-top: 1rem;
+}
+
+.toggle-link a {
+    color: #6a11cb;
+}
+
+
+.hidden {
+    display: none;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.error-message {
+    color: red; 
+    margin-top: 10px;
+    display: none;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 5px;
+}
+.modal-content h2{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+.hidden {
+   display: none;
+}
+.verify-btn, .send-btn {
+    margin-left: 6.5rem;
+    background-color: #6a11cb;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.social-login a{
+    padding-right: 1rem;
+}

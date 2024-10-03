@@ -214,37 +214,51 @@ cursor: pointer;
     .navbar{
         padding: 0.5rem;
     }
-    .menu{
+    .menu {
         list-style: none;
         display: block;
-        width: 17.5rem;
+        width: 16rem;
         height: auto;
         position: absolute; 
-        top: 5rem;
+        top: 4.2rem;
         right: -100%;
         padding: 1.875rem 0;
-        box-shadow: 0rem 0.125rem 0.625rem rgba(0,0,0,0.2);
+        background-color: rgb(71, 102, 119);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         border-radius: 0.8125rem;
         opacity: 0;
-        transition: all 0.3s;
-
+        transition: all 0.3s ease;
+        z-index: 1000;
     }
-
-    .menu.active{
-       right: 0.625rem;
-       opacity: 1;
-       background-color:burlywood   ;
-       background-clip:inherit;
+    
+    .menu.active {
+        right: 0.625rem;
+        opacity: 1; 
     }
     
 
-    .menu li a{
-        color: #fff;
-      
-    }
-    .menu li{
+    .menu li {
         padding: 1rem;
-      
+    }
+    
+
+    .menu li a {
+        color: #fff; 
+        text-decoration: none;
+        font-family: 'Arial', sans-serif;
+        font-size: 1rem;
+        display: block; 
+    }
+    
+    /* Hover effect for links */
+    .menu li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 0.5rem;
+        width: 50%;
+    }
+    
+    .menu li a.active {
+        font-weight: bold;
     }
     .w-btn{
         margin: 1.25rem 0 0 3.125rem;
@@ -303,6 +317,9 @@ cursor: pointer;
         }
         .jobs .jlist {
             padding: 5px;
+        }
+        .jlist h3{
+            font-size: 1rem;
         }
   
 }

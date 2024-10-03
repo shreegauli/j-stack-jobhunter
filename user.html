@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Stock</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar" id="obj-width">
+        <a href="index.html" class="logo"><img src="images/logo.png" width="120px" alt=""></a>
+        <ul class="menu" id="menue">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="job.html">Browse Jobs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="fa-solid fa-bars" id="bar"></i>
+    </nav>
+</header>
+
+<section class="auth-section">
+    <div class="auth-container">
+        <div class="form-container">
+            <h2>Welcome Back!</h2>
+            <p>Please log in to your account</p>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-btn">Log In</button>
+                <p class="toggle-link">Don't have an account? <a href="#" id="toggle-signup">Sign up</a></p>
+            </form>
+            <div class="social-login">
+                <p>Or log in with:</p>
+                <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                <!-- Mobile login icon -->
+                <a href="#" class="social-icon" id="mobile-login-icon"><i class="fas fa-mobile-alt"></i></a> 
+            </div>
+        </div>
+
+        <div class="form-container hidden">
+            <h2>Create an Account</h2>
+            <p>Sign up to get started</p>
+            <form class="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+                <p class="toggle-link">Already have an account? <a href="#" id="toggle-login">Log in</a></p>
+            </form>
+            <div class="social-login">
+                <p>Or sign up with:</p>
+                <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-icon"><i class="fas fa-mobile-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+        <!-- Mobile login modal -->
+        <div id="mobileLoginModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span> <!-- Close button -->
+                <h2>Login with Mobile Number</h2>
+                <form id="mobileLoginForm">
+                    <div class="form-group">
+                        <label for="mobile-number">Mobile Number</label>
+                        <input type="number" id="mobile-number" placeholder="+1234567890" required="required">
+                    </div>
+                    <button type="submit" class="send-btn">Send OTP</button>
+                </form>
+
+                <!-- OTP verification section -->
+                <div id="otpVerificationSection" style="display:none;">
+                    <p>Please enter the OTP sent to: <span id='display-mobile'></span></p> <!-- Display mobile number -->
+                    <div class="form-group">
+                        <label for="otp">Enter OTP</label>
+                        <input type="text" id="otp" placeholder="Enter received OTP" required>
+                    </div>
+                    <button id="verifyOtpBtn" class="verify-btn">Verify OTP</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-container hidden">
+        </div>
+
+    </div>
+</section>
+
+<script>
+const toggleSignup = document.getElementById('toggle-signup');
+const toggleLogin = document.getElementById('toggle-login');
+const loginForm = document.querySelector('.login-form');
+const signupForm = document.querySelector('.signup-form');
+
+if (toggleSignup) {
+    toggleSignup.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginForm.parentElement.classList.add('hidden');
+        signupForm.parentElement.classList.remove('hidden');
+    });
+}
+
+if (toggleLogin) {
+    toggleLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        signupForm.parentElement.classList.add('hidden'); 
+        loginForm.parentElement.classList.remove('hidden');
+    });
+}
+
+// Handle mobile login
+const mobileLoginIcon = document.getElementById('mobile-login-icon');
+const mobileLoginModal = document.getElementById('mobileLoginModal');
+const closeModal = document.querySelector('.close');
+
+mobileLoginIcon.addEventListener('click', () => {
+    mobileLoginModal.classList.remove('hidden'); // Show modal
+});
+
+closeModal.addEventListener('click', () => {
+    mobileLoginModal.classList.add('hidden'); // Hide modal
+});
+
+// Handle sending OTP
+document.getElementById('mobileLoginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    const mobileNumber = document.getElementById('mobile-number').value;
+
+    // Here you would typically send the OTP to the provided mobile number.
+    console.log("Sending OTP to:", mobileNumber);
+
+    // Simulate sending OTP and show verification section
+    document.getElementById('otpVerificationSection').style.display = 'block';
+    document.getElementById('display-mobile').textContent = mobileNumber; // Display the entered mobile number
+
+    // Hide the mobile number input section
+    this.style.display = 'none';
+});
+
+// Handle OTP verification
+document.getElementById('verifyOtpBtn').addEventListener('click', function() {
+    const otp = document.getElementById('otp').value;
+
+    // Here you would typically verify the entered OTP with your server.
+    console.log("Verifying OTP:", otp);
+
+    // Simulate successful verification
+    alert("OTP verified successfully!"); // Replace with actual logic
+});
+</script>
+
+<script src="/script.js"></script>
+
+</body> 
+</html>
