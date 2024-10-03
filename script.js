@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const bar = document.getElementById("bar");
 const menu = document.getElementById("menue");
@@ -159,4 +160,32 @@ document.getElementById('verifySignupOtpBtn').addEventListener('click', function
     console.log("Verifying Signup OTP:", signupOtp);
 
     alert("Signup OTP verified successfully!");
+=======
+
+const bar = document.getElementById("bar");
+const menu = document.getElementById("menue");
+
+if (bar) {
+    bar.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+}
+
+document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target) && !bar.contains(event.target)) {
+        menu.classList.remove("active");
+    }
+});
+
+const baar = document.querySelector("#bar");
+console.log(baar);
+
+const sortBtns = document.querySelectorAll(".job-id > *");
+
+sortBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        sortBtns.forEach((btn) => btn.classList.remove("active"));
+        btn.classList.add("active");
+    });
+>>>>>>> d832e8aaece5de9e68a56dfa92d2d9c3096c6c60
 });

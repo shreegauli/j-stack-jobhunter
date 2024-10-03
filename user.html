@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,3 +130,273 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Stock</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar" id="obj-width">
+        <a href="index.html" class="logo"><img src="images/logo.png" width="120px" alt=""></a>
+        <ul class="menu" id="menue">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="job.html">Browse Jobs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="fa-solid fa-bars" id="bar"></i>
+    </nav>
+</header>
+
+<section class="auth-section">
+    <div class="auth-container">
+        <!-- Login Form -->
+        <div class="form-container">
+            <h2>Welcome Back!</h2>
+            <p>Please log in to your account</p>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-btn">Log In</button>
+                <p class="toggle-link">Don't have an account? <a href="#" id="toggle-signup">Sign up</a></p>
+            </form>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <p>Or log in with:</p>
+                <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                <!-- Mobile login icon -->
+                <a href="#" class="social-icon" id="mobile-login-icon"><i class="fas fa-mobile-alt"></i></a> 
+            </div>
+        </div>
+
+        <!-- Mobile login modal -->
+        <div id="mobileLoginModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span> <!-- Close button -->
+                <h2>Login with Mobile Number</h2>
+                <form id="mobileLoginForm">
+                    <div class="form-group">
+                        <label for="mobile-number">Mobile Number</label>
+                        <input type="tel" id="mobile-number" placeholder="+1234567890" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Send OTP</button>
+                </form>
+
+                <!-- OTP verification section -->
+                <div id="otpVerificationSection" style="display:none;">
+                    <p>Please enter the OTP sent to: <span id='display-mobile'></span></p> <!-- Display mobile number -->
+                    <div class='form-group'>
+                        <label for='otp'>Enter OTP</label>
+                        <input type='text' id='otp' placeholder='Enter received OTP' required />
+                    </div>
+                    <button id='verifyOtpBtn' class='auth-btn'>Verify OTP</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Signup form -->
+        <div class='signup-container hidden'>
+            <h2>Create an Account</h2>
+            <p>Sign up to get started</p>
+            <form id='signupForm'>
+                <!-- Email field -->
+                <div class='form-group'>
+                    <label for='signup-email'>Email Address</label>
+                    <input type='email' id='signup-email' placeholder='Enter your email' required />
+                </div>
+
+                <!-- Mobile Number field -->
+                <div class='form-group'>
+                    <label for='signup-mobile'>Mobile Number</label>
+                    <input type='tel' id='signup-mobile' placeholder='+1234567890' required />
+                </div>
+
+                <!-- Password field -->
+                <div class='form-group'>
+                    <label for='signup-password'>Password</label>
+                    <input type='password' id='signup-password' placeholder='Create a password' required />
+                </div>
+
+                <!-- Confirm Password field -->
+                <div class='form-group'>
+                    <label for='confirm-password'>Confirm Password</label>
+                    <input type='password' id='confirm-password' placeholder='Confirm your password' required />
+                </div>
+
+                <!-- Send OTP button -->
+                <button type='submit' class='auth-btn'>Sign Up & Send OTP</button>
+
+                <!-- OTP verification section -->
+                <div id='signupOtpVerificationSection' style='display:none;'>
+                    Please enter the OTP sent to: 
+                    <span id='display-signup-mobile'></span><br />
+                    Enter OTP: 
+                    <input type='text' id='signup-otp' placeholder='Enter received OTP' required />
+                    <button id='verifySignupOtpBtn' class='auth-btn'>Verify OTP</button>
+                </div>
+
+                <!-- Toggle link to go back to login -->
+                <p class='toggle-link'>Already have an account? 
+                  <a href='#' id='toggle-login'>Log in</a></p> 
+            </form> 
+        </div>
+
+    </div>
+</section>
+
+<script>
+// Toggle between login and signup forms
+const toggleSignup = document.getElementById('toggle-signup');
+const toggleLogin = document.getElementById('toggle-login');
+const loginForm = document.querySelector('.login-form');
+const signupContainer = document.querySelector('.signup-container');
+
+if (toggleSignup) {
+    toggleSignup.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginForm.parentElement.classList.add('hidden');
+        signupContainer.classList.remove('hidden'); // Show signup form
+    });
+}
+
+if (toggleLogin) {
+    toggleLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        signupContainer.classList.add('hidden'); 
+        loginForm.parentElement.classList.remove('hidden');
+    });
+}
+
+// Handle mobile login
+const mobileLoginIcon = document.getElementById('mobile-login-icon');
+const mobileLoginModal = document.getElementById('mobileLoginModal');
+const closeModal = document.querySelector('.close');
+
+mobileLoginIcon.addEventListener('click', () => {
+    mobileLoginModal.classList.remove('hidden'); // Show modal
+});
+
+closeModal.addEventListener('click', () => {
+    mobileLoginModal.classList.add('hidden'); // Hide modal
+});
+
+// Handle sending OTP for mobile login
+document.getElementById('mobileLoginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    const mobileNumber = document.getElementById('mobile-number').value;
+
+    // Here you would typically send the OTP to the provided mobile number.
+    console.log("Sending OTP to:", mobileNumber);
+
+    // Show verification section
+    document.getElementById('otpVerificationSection').style.display = 'block';
+    document.getElementById('display-mobile').textContent = mobileNumber; // Display the entered mobile number
+
+    // Hide the mobile number input section
+    this.style.display = 'none';
+});
+
+// Handle OTP verification for mobile login
+document.getElementById('verifyOtpBtn').addEventListener('click', function() {
+    const otp = document.getElementById('otp').value;
+
+    // Here you would typically verify the entered OTP with your server.
+    console.log("Verifying OTP:", otp);
+
+    // Simulate successful verification
+    alert("OTP verified successfully!"); // Replace with actual logic
+});
+
+// Handle signup form submission and sending OTP
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+   const signupEmail = document.getElementById('signup-email').value;
+   const signupMobileNumber = document.getElementById('signup-mobile').value;
+   const signupPassword = document.getElementById('signup-password').value;
+   const confirmPassword = document.getElementById('confirm-password').value;
+
+   // Validate password confirmation
+   if (signupPassword !== confirmPassword) {
+       alert("Passwords do not match!"); // Alert user if passwords do not match
+       return; // Stop further execution
+   }
+
+   // Here you would typically send the OTP to the provided mobile number.
+   console.log("Sending Signup OTP to:", signupMobileNumber);
+
+   // Show verification section for signup
+   document.getElementById('signupOtpVerificationSection').style.display = 'block';
+   document.getElementById('display-signup-mobile').textContent = signupMobileNumber; // Display the entered mobile number
+
+   // Hide the signup mobile number input section
+   this.style.display = 'none';
+});
+
+// Handle OTP verification for signup
+document.getElementById('verifySignupOtpBtn').addEventListener('click', function() {
+   const signupOtp = document.getElementById('signup-otp').value;
+
+   // Here you would typically verify the entered OTP with your server.
+   console.log("Verifying Signup OTP:", signupOtp);
+
+   // Simulate successful verification
+   alert("Signup OTP verified successfully!"); 
+});
+
+
+
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const signupEmail = document.getElementById('signup-email').value;
+    const signupMobileNumber = document.getElementById('signup-mobile').value;
+    const signupPassword = document.getElementById('signup-password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    // Validate password confirmation
+    if (signupPassword !== confirmPassword) {
+        alert("Passwords do not match!"); // Alert user if passwords do not match
+        return; // Stop further execution
+    }
+
+    // Here you would typically send the OTP to the provided mobile number.
+    console.log("Sending Signup OTP to:", signupMobileNumber);
+
+    // Show verification section for signup
+    document.getElementById('signupOtpVerificationSection').style.display = 'block';
+    document.getElementById('display-signup-mobile').textContent = signupMobileNumber; // Display the entered mobile number
+
+    // Hide the signup mobile number input section
+    this.style.display = 'none';
+});
+
+document.getElementById('verifySignupOtpBtn').addEventListener('click', function() {
+    const signupOtp = document.getElementById('signup-otp').value;
+
+    console.log("Verifying Signup OTP:", signupOtp);
+
+    alert("Signup OTP verified successfully!");
+});
+</script>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
+>>>>>>> d832e8aaece5de9e68a56dfa92d2d9c3096c6c60
