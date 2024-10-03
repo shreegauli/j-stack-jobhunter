@@ -301,6 +301,9 @@ cursor: pointer;
         .features .fe-box div{
             width: 40%;
         }
+        .jobs .jlist {
+            padding: 5px;
+        }
   
 }
 
