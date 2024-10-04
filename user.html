@@ -24,7 +24,7 @@
 
 <section class="auth-section">
     <div class="auth-container">
-        <!-- Login Form -->
+        
         <div class="form-container">
             <h2>Welcome Back!</h2>
             <p>Please log in to your account</p>
@@ -41,16 +41,16 @@
                 <p class="toggle-link">Don't have an account? <a href="#" id="toggle-signup">Sign up</a></p>
             </form>
 
-            <!-- Social Login -->
+     
             <div class="social-login">
                 <p>Or log in with:</p>
                 <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
-                <!-- Mobile login icon -->
+             
                 <a href="#" class="social-icon" id="mobile-login-icon"><i class="fas fa-mobile-alt"></i></a> 
             </div>
         </div>
 
-        <!-- Mobile login modal -->
+        
         <div id="mobileLoginModal" class="modal hidden">
             <div class="modal-content">
                 <span class="close">&times;</span> <!-- Close button -->
@@ -63,9 +63,9 @@
                     <button type="submit" class="auth-btn">Send OTP</button>
                 </form>
 
-                <!-- OTP verification section -->
+               
                 <div id="otpVerificationSection" style="display:none;">
-                    <p>Please enter the OTP sent to: <span id='display-mobile'></span></p> <!-- Display mobile number -->
+                    <p>Please enter the OTP sent to: <span id='display-mobile'></span></p> 
                     <div class='form-group'>
                         <label for='otp'>Enter OTP</label>
                         <input type='text' id='otp' placeholder='Enter received OTP' required />
@@ -76,39 +76,39 @@
             </div>
         </div>
 
-        <!-- Signup form -->
+      
         <div class='signup-container hidden'>
             <h2>Create an Account</h2>
             <p>Sign up to get started</p>
             <form id='signupForm'>
-                <!-- Email field -->
+              
                 <div class='form-group'>
                     <label for='signup-email'>Email Address</label>
                     <input type='email' id='signup-email' placeholder='Enter your email' required />
                 </div>
 
-                <!-- Mobile Number field -->
+           
                 <div class='form-group'>
                     <label for='signup-mobile'>Mobile Number</label>
                     <input type='tel' id='signup-mobile' placeholder='+1234567890' required />
                 </div>
 
-                <!-- Password field -->
+         
                 <div class='form-group'>
                     <label for='signup-password'>Password</label>
                     <input type='password' id='signup-password' placeholder='Create a password' required />
                 </div>
 
-                <!-- Confirm Password field -->
+             
                 <div class='form-group'>
                     <label for='confirm-password'>Confirm Password</label>
                     <input type='password' id='confirm-password' placeholder='Confirm your password' required />
                 </div>
 
-                <!-- Send OTP button -->
+            
                 <button type='submit' class='auth-btn'>Sign Up & Send OTP</button>
 
-                <!-- OTP verification section -->
+            
                 <div id='signupOtpVerificationSection' style='display:none;'>
                     Please enter the OTP sent to: 
                     <span id='display-signup-mobile'></span><br/>
@@ -117,7 +117,7 @@
                     <button id='verifySignupOtpBtn' class='auth-btn'>Verify OTP</button>
                 </div>
 
-                <!-- Toggle link to go back to login -->
+             
                 <p class='toggle-link'>Already have an account? </p>
                   <a href='#' id='toggle-login'>Log in</a> 
             </form> 
