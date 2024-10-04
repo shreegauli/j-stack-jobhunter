@@ -1,6 +1,5 @@
-
 const bar = document.getElementById("bar");
-const menu = document.getElementById("menue");
+const menu = document.getElementById("menue"); 
 
 if (bar) {
     bar.addEventListener("click", () => {
@@ -21,13 +20,12 @@ const sortBtns = document.querySelectorAll(".job-id > *");
 
 sortBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-        sortBtns.forEach((btn) => btn.classList.remove("active"));
+        sortBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
     });
 });
 
 
-// Toggle between login and signup forms
 const toggleSignup = document.getElementById('toggle-signup');
 const toggleLogin = document.getElementById('toggle-login');
 const loginForm = document.querySelector('.login-form');
@@ -37,7 +35,7 @@ if (toggleSignup) {
     toggleSignup.addEventListener('click', (e) => {
         e.preventDefault();
         loginForm.parentElement.classList.add('hidden');
-        signupContainer.classList.remove('hidden'); // Show signup form
+        signupContainer.classList.remove('hidden');
     });
 }
 
@@ -54,20 +52,23 @@ const mobileLoginIcon = document.getElementById('mobile-login-icon');
 const mobileLoginModal = document.getElementById('mobileLoginModal');
 const closeModal = document.querySelector('.close');
 
-mobileLoginIcon.addEventListener('click', () => {
-    mobileLoginModal.classList.remove('hidden'); // Show modal
-});
+if (mobileLoginIcon) {
+    mobileLoginIcon.addEventListener('click', () => {
+        mobileLoginModal.classList.remove('hidden'); // Show modal
+    });
+}
 
-closeModal.addEventListener('click', () => {
-    mobileLoginModal.classList.add('hidden'); // Hide modal
-});
+if (closeModal) { // Check if closeModal exists
+    closeModal.addEventListener('click', () => {
+        mobileLoginModal.classList.add('hidden'); // Hide modal
+    });
+}
 
 // Handle sending OTP for mobile login
 document.getElementById('mobileLoginForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent default form submission
     const mobileNumber = document.getElementById('mobile-number').value;
 
-    // Here you would typically send the OTP to the provided mobile number.
     console.log("Sending OTP to:", mobileNumber);
 
     // Show verification section
@@ -81,17 +82,15 @@ document.getElementById('mobileLoginForm').addEventListener('submit', function(e
 // Handle OTP verification for mobile login
 document.getElementById('verifyOtpBtn').addEventListener('click', function() {
     const otp = document.getElementById('otp').value;
-
-    // Here you would typically verify the entered OTP with your server.
+    
     console.log("Verifying OTP:", otp);
-
-    // Simulate successful verification
-    alert("OTP verified successfully!"); // Replace with actual logic
+    
+    alert("OTP verified successfully!");
 });
 
 // Handle signup form submission and sending OTP
 document.getElementById('signupForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+   e.preventDefault(); // Prevent default form submission
 
    const signupEmail = document.getElementById('signup-email').value;
    const signupMobileNumber = document.getElementById('signup-mobile').value;
@@ -100,63 +99,24 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 
    // Validate password confirmation
    if (signupPassword !== confirmPassword) {
-       alert("Passwords do not match!"); // Alert user if passwords do not match
-       return; // Stop further execution
+       alert("Passwords do not match!");
+       return; 
    }
 
-   // Here you would typically send the OTP to the provided mobile number.
    console.log("Sending Signup OTP to:", signupMobileNumber);
 
    // Show verification section for signup
    document.getElementById('signupOtpVerificationSection').style.display = 'block';
-   document.getElementById('display-signup-mobile').textContent = signupMobileNumber; // Display the entered mobile number
+   document.getElementById('display-signup-mobile').textContent = signupMobileNumber;
 
-   // Hide the signup mobile number input section
-   this.style.display = 'none';
+   this.style.display = 'none'; // Hide the signup mobile number input section
 });
 
 // Handle OTP verification for signup
 document.getElementById('verifySignupOtpBtn').addEventListener('click', function() {
    const signupOtp = document.getElementById('signup-otp').value;
 
-   // Here you would typically verify the entered OTP with your server.
    console.log("Verifying Signup OTP:", signupOtp);
 
-   // Simulate successful verification
-   alert("Signup OTP verified successfully!"); 
-});
-
-
-
-document.getElementById('signupForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
-
-    const signupEmail = document.getElementById('signup-email').value;
-    const signupMobileNumber = document.getElementById('signup-mobile').value;
-    const signupPassword = document.getElementById('signup-password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-
-    // Validate password confirmation
-    if (signupPassword !== confirmPassword) {
-        alert("Passwords do not match!"); // Alert user if passwords do not match
-        return; // Stop further execution
-    }
-
-    // Here you would typically send the OTP to the provided mobile number.
-    console.log("Sending Signup OTP to:", signupMobileNumber);
-
-    // Show verification section for signup
-    document.getElementById('signupOtpVerificationSection').style.display = 'block';
-    document.getElementById('display-signup-mobile').textContent = signupMobileNumber; // Display the entered mobile number
-
-    // Hide the signup mobile number input section
-    this.style.display = 'none';
-});
-
-document.getElementById('verifySignupOtpBtn').addEventListener('click', function() {
-    const signupOtp = document.getElementById('signup-otp').value;
-
-    console.log("Verifying Signup OTP:", signupOtp);
-
-    alert("Signup OTP verified successfully!");
+   alert("Signup OTP verified successfully!");
 });
