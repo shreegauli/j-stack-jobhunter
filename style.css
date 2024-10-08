@@ -131,7 +131,7 @@ display: none;
 
 }
 .serch input{
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     width: 100%;
     height: 4rem;
     border-radius: 2.1875rem;
@@ -206,6 +206,64 @@ flex-wrap: wrap;
 .jlist.delete{
     display: none;
 }
+.trust{
+    padding: 0 2rem;
+}
+.trust .t-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+}
+.team{
+    padding: 3rem 2rem;
+}
+.trust .t-box img{
+   margin: 1rem 1rem 1rem 0;
+}
+.team-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    align-items: center;
+}
+.team-container img{
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.f1-box{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    border: 1px solid #c1e1d9;
+    width: 200px;
+    padding: 8px 8px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(68, 145, 226, 0.17) 0px -23px 25px 0px inset;
+    border-radius: 20px;
+}
+.f1-box .v-btn{
+    text-decoration: none;
+    background-color: #51a995;
+    color: #fff;
+    padding: 9px 15px;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+#key {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 10px 10px;
+    border-radius: 20px;
+    background-color: #edcfee;
+}
+
+
 /* mobile responsive */
 
 @media (max-width: 699px) {
@@ -225,10 +283,10 @@ cursor: pointer;
         width: 16rem;
         height: auto;
         position: absolute; 
-        top: 4.2rem;
+        top: 3.8rem;
         right: -100%;
         padding: 1.875rem 0;
-        background-color: rgb(71, 102, 119);
+        background-color: rgb(88, 185, 237);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         border-radius: 0.8125rem;
         opacity: 0;
@@ -281,10 +339,16 @@ cursor: pointer;
       
         .h-left{
             width: 100%;
-
         }
+        .h-left h1 {
+         font-size: 2.5rem;
+         margin-bottom: 10px;
+        }
+        .h-left p {
+            margin-bottom: 12px;
+           }
         .h-right{
-            display: none;
+            width: 90%;
         }
         .serch input {
            margin-top: 1rem;
@@ -310,7 +374,7 @@ cursor: pointer;
             justify-content: center;
             align-items: start;
             height: auto;
-            padding: 8rem 1rem;
+            padding: 5.5rem 1rem;
           
         }
         .hero {
@@ -318,7 +382,8 @@ cursor: pointer;
             padding: 0;
         }
         .features .fe-box div{
-            width: 40%;
+            width: 49%;
+            text-align: start;
         }
         .jobs .jlist {
             padding: 5px;
@@ -354,6 +419,17 @@ cursor: pointer;
             text-wrap: nowrap;
 
          }
+         .features h2{
+            font-size: 1.8rem;
+         }
+         .team-container{
+        
+            justify-content: space-around;
+          
+        }
+        .f1-box{
+            width: 150px;
+        }
   
 }
 
@@ -366,4 +442,12 @@ cursor: pointer;
         top: 1.75rem;
         right: -1.25rem;
     }
+    .hero-box .h-left h1{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.features .fe-box div {
+    width: 48%;
+}
 }
