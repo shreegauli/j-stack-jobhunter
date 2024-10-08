@@ -18,12 +18,23 @@ console.log(baar);
 
 const sortBtns = document.querySelectorAll(".job-id > *");
 
+const sortItems = document.querySelectorAll('.jobs-container > *');
+
 sortBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
         sortBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
+//job listing //
+        const targetData = btn.getAttribute("data-targe");
+        sortItems.forEach((item) =>{
+            item.classList.add("delete");
+            if(item.getAttribute('data-item') === targetData || targetData === "alljob"){
+                item.classList.remove('delete');
+            } 
+        } );
     });
 });
+
 
 
 const toggleSignup = document.getElementById('toggle-signup');
@@ -47,39 +58,39 @@ if (toggleLogin) {
     });
 }
 
-// Handle mobile login
+
 const mobileLoginIcon = document.getElementById('mobile-login-icon');
 const mobileLoginModal = document.getElementById('mobileLoginModal');
 const closeModal = document.querySelector('.close');
 
 if (mobileLoginIcon) {
     mobileLoginIcon.addEventListener('click', () => {
-        mobileLoginModal.classList.remove('hidden'); // Show modal
+        mobileLoginModal.classList.remove('hidden'); 
     });
 }
 
-if (closeModal) { // Check if closeModal exists
+if (closeModal) {
     closeModal.addEventListener('click', () => {
-        mobileLoginModal.classList.add('hidden'); // Hide modal
+        mobileLoginModal.classList.add('hidden');
     });
 }
 
-// Handle sending OTP for mobile login
+
 document.getElementById('mobileLoginForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
     const mobileNumber = document.getElementById('mobile-number').value;
 
     console.log("Sending OTP to:", mobileNumber);
 
-    // Show verification section
-    document.getElementById('otpVerificationSection').style.display = 'block';
-    document.getElementById('display-mobile').textContent = mobileNumber; // Display the entered mobile number
 
-    // Hide the mobile number input section
+    document.getElementById('otpVerificationSection').style.display = 'block';
+    document.getElementById('display-mobile').textContent = mobileNumber;
+
+
     this.style.display = 'none';
 });
 
-// Handle OTP verification for mobile login
+
 document.getElementById('verifyOtpBtn').addEventListener('click', function() {
     const otp = document.getElementById('otp').value;
     
@@ -88,9 +99,9 @@ document.getElementById('verifyOtpBtn').addEventListener('click', function() {
     alert("OTP verified successfully!");
 });
 
-// Handle signup form submission and sending OTP
+
 document.getElementById('signupForm').addEventListener('submit', function(e) {
-   e.preventDefault(); // Prevent default form submission
+   e.preventDefault(); 
 
    const signupEmail = document.getElementById('signup-email').value;
    const signupMobileNumber = document.getElementById('signup-mobile').value;

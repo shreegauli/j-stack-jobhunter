@@ -174,7 +174,6 @@ flex-wrap: wrap;
     align-items: center;
     list-style: none;
     box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
-  overflow-y: auto;
 }
 .jobs .job-id li{
    padding: 20px 40px;
@@ -200,6 +199,12 @@ flex-wrap: wrap;
     font-size: 1.2rem;
     padding-bottom: 0;
     font-weight: 500;
+}
+.jlist:hover{
+    background: #ecf1ee;
+}
+.jlist.delete{
+    display: none;
 }
 /* mobile responsive */
 
@@ -321,6 +326,34 @@ cursor: pointer;
         .jlist h3{
             font-size: 1rem;
         }
+        .jobs-container{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .jobs .job-id{
+            position: relative;
+            width: 100%;
+            overflow-x: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .jobs .jlist{
+            width: 39.9%;
+            margin-top: 1rem;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 15px;
+            padding: 2rem 1rem;
+            text-align: center;
+            justify-content: center;
+
+
+        }
+        .jobs .job-id li{
+            padding: 20px 30px;
+            text-wrap: nowrap;
+
+         }
   
 }
 
