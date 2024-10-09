@@ -145,27 +145,34 @@ position: absolute;
 top: 2rem;
 right: 1.25rem;
 transition: all 0.5s;
-font-size: 17px;
-padding: 1ch 2ch;
-background-color: rgb(123, 174, 127);
-color: #ffffff;
-cursor: pointer;
-border: none;
-border-radius: 20px;
-box-shadow:
-  2px 2px 0px hsl(0, 100%, 84%),
-  4px 4px 0px hsl(0, 13%, 53%),
-  6px 6px 0px hsl(0, 18%, 52%),
-  8px 8px 0px hsl(0, 14%, 52%),
-  10px 10px 0px hsl(0, 39%, 59%),
-  12px 12px 0px hsl(0, 57%, 59%);
-
-
+background-color: #ffffff00;
+  color: #010101;
+  width: 3.5em;
+  height: 1.6em;
+  border: #3654ff 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
 }
 .serch a:hover {
-    background-color: hsl(0, 0%, 50%);
-    color: #fff;
-    box-shadow: none;
+    background-color: #3654ff;
+    cursor: pointer;
+  }
+  
+  .serch a svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+  }
+  
+  .serch a:hover svg {
+    transform: translateX(5px);
+  }
+  
+  .serch a .text {
+    margin: 0 1.5em
   }
 .features{
     padding: 0 20px;
@@ -377,7 +384,7 @@ cursor: pointer;
         }
         #g-btn {
         
-            top: 1.75rem;
+            top: 1.5rem;
             right: 1rem;
            
         }
@@ -446,12 +453,16 @@ cursor: pointer;
          }
          .team-container{
         
-            justify-content: space-around;
+        
           
         }
         .f1-box{
-            width: 40%;
+            width: 44%;
         }
+       #key{
+         font-size: 0.7rem;
+         
+       }
   
 }
 
