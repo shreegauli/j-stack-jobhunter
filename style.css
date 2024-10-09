@@ -142,7 +142,7 @@ display: none;
 }
 .serch a{
 position: absolute;
-top: 1.75rem;
+top: 2.2rem;
 right: 1.25rem;
 
 }
@@ -428,7 +428,7 @@ cursor: pointer;
           
         }
         .f1-box{
-            width: 150px;
+            width: 40%;
         }
   
 }
@@ -439,7 +439,7 @@ cursor: pointer;
 
     .serch a {
         position: absolute;
-        top: 1.75rem;
+        top: 2.2rem;
         right: -1.25rem;
     }
     .hero-box .h-left h1{
