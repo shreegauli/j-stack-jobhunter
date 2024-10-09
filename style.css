@@ -70,15 +70,41 @@ header{
 }
 .w-btn{
 margin-left: 2.5rem;
-background-color: #fff;
-padding: 0.5625rem 1.25rem;
-color: #1f4a40;
-border-radius: 1.25rem;
-font-size: 1.2rem;
+border-radius: 1rem;
 font-weight: 500;
-box-shadow: none;
-border: none;
+color: rgb(1, 1, 1);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid purple;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
 }
+.w-btn:hover {
+    color: #1f4a40;
+  }
+  
+  .w-btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: purple;
+    z-index: -1;
+    transition: all 1s;
+  }
+  
+  .w-btn:hover::before {
+    width: 160%;
+  }
+  
 #w-btn{
     margin-left: 2.5rem;
     background-color: #fff;
@@ -142,21 +168,22 @@ display: none;
 }
 .serch a{
 position: absolute;
-top: 2rem;
+top: 1.95rem;
 right: 1.25rem;
 transition: all 0.5s;
 background-color: #ffffff00;
   color: #010101;
   width: 3.5em;
   height: 1.6em;
-  border: #3654ff 0.2em solid;
+  border: #51a995 0.2em solid;
   border-radius: 11px;
   text-align: right;
   transition: all 0.6s ease;
 }
 .serch a:hover {
-    background-color: #3654ff;
+    background-color: #51a995;
     cursor: pointer;
+    border-radius: 21px;
   }
   
   .serch a svg {
@@ -171,9 +198,6 @@ background-color: #ffffff00;
     transform: translateX(5px);
   }
   
-  .serch a .text {
-    margin: 0 1.5em
-  }
 .features{
     padding: 0 20px;
 }
@@ -315,12 +339,12 @@ cursor: pointer;
         top: 3.8rem;
         right: -100%;
         padding: 1.875rem 0;
-        background-color: rgb(88, 185, 237);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        background-color: rgb(99, 123, 136);
         border-radius: 0.8125rem;
         opacity: 0;
         transition: all 0.3s ease;
         z-index: 1000;
+        box-shadow: -5px 5px 1px 0px #004d92;
     }
     
     .menu.active {
@@ -353,16 +377,24 @@ cursor: pointer;
         font-weight: bold;
     }
     .w-btn{
-        margin: 1.25rem 0 0 3.125rem;
-        background-color: #1f4a40;
-        padding: 0.5625rem 0.75rem;
-        color: #fff;
-        border-radius: 1.25rem;
-        font-size: 1.2rem;
-        font-weight: 500;
-        box-shadow: none;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ff7576;
+        background-color: #2B3044;
         border: none;
+        outline: none;
         cursor: pointer;
+        padding: 12px 24px;
+        position: relative;
+        line-height: 24px;
+        border-radius: 9px;
+        box-shadow: 0px 1px 2px #2B3044,
+          0px 4px 16px #2B3044;
+        transform-style: preserve-3d;
+        transform: scale(var(--s, 1)) perspective(600px)
+          rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+        perspective: 600px;
+        transition: transform 0.1s;
         }
 
       
@@ -472,7 +504,7 @@ cursor: pointer;
 
     .serch a {
         position: absolute;
-        top: 2.2rem;
+        top: 2rem;
         right: -1.25rem;
     }
     .hero-box .h-left h1{
