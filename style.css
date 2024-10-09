@@ -314,6 +314,14 @@ flex-wrap: wrap;
     border-radius: 20px;
     background-color: #edcfee;
 }
+/* From Uiverse.io by dylanharriscameron */ 
+.t-box {
+    height: 4rem;
+    border-radius: 14px;
+    box-shadow: 20px 20px 20px #bebebe, -20px -20px 20px #ffffff;
+  }
+  
+  
 
 
 
@@ -483,9 +491,9 @@ cursor: pointer;
          .features h2{
             font-size: 1.8rem;
          }
-         .team-container{
+         .t-box{
         
-        
+        height: 10rem;
           
         }
         .f1-box{
