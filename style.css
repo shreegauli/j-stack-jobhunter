@@ -142,10 +142,31 @@ display: none;
 }
 .serch a{
 position: absolute;
-top: 2.2rem;
+top: 2rem;
 right: 1.25rem;
+transition: all 0.5s;
+font-size: 17px;
+padding: 1ch 2ch;
+background-color: rgb(123, 174, 127);
+color: #ffffff;
+cursor: pointer;
+border: none;
+border-radius: 20px;
+box-shadow:
+  2px 2px 0px hsl(0, 100%, 84%),
+  4px 4px 0px hsl(0, 13%, 53%),
+  6px 6px 0px hsl(0, 18%, 52%),
+  8px 8px 0px hsl(0, 14%, 52%),
+  10px 10px 0px hsl(0, 39%, 59%),
+  12px 12px 0px hsl(0, 57%, 59%);
+
 
 }
+.serch a:hover {
+    background-color: hsl(0, 0%, 50%);
+    color: #fff;
+    box-shadow: none;
+  }
 .features{
     padding: 0 20px;
 }
@@ -262,6 +283,7 @@ flex-wrap: wrap;
     border-radius: 20px;
     background-color: #edcfee;
 }
+
 
 
 /* mobile responsive */
@@ -404,7 +426,7 @@ cursor: pointer;
             scrollbar-width: none;
         }
         .jobs .jlist{
-            width: 39%;
+            width: 38%;
             margin-top: 1rem;
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 15px;
